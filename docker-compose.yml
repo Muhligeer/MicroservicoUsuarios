@@ -1,0 +1,51 @@
+services:
+  app:
+    container_name: microservico-usuarios-app
+    build:
+      context: .
+      dockerfile: ./src/MicroservicoUsuarios.API/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=db,1433;Database=microservico-usuarios;User Id=sa;Password=Password@123;TrustServerCertificate=True
+      - Jwt__Secret=uma-chave-secreta-forte-para-o-teste-tecnico-da-junto-seguros-4734891654
+
+      - Serilog__Using__0=Serilog.Sinks.Console
+      - Serilog__Using__1=Serilog.Sinks.File
+      - Serilog__MinimumLevel=Information
+      - Serilog__WriteTo__0__Name=Console
+      - Serilog__WriteTo__0__Args__outputTemplate=[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}
+      - Serilog__WriteTo__1__Name=File
+      - Serilog__WriteTo__1__Args__path=Logs/log.txt
+      - Serilog__WriteTo__1__Args__rollingInterval=Day
+      - Serilog__WriteTo__1__Args__outputTemplate=[{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} {Level:u3}] {Message:lj}{NewLine}{Exception}
+      - Serilog__Enrich__0=FromLogContext
+      - Serilog__Enrich__1=WithMachineName
+      - Serilog__Enrich__2=WithProcessId
+      - Serilog__Enrich__3=WithThreadId
+      - Serilog__Properties__Application=MicroservicoUsuarios
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  db:
+    container_name: microservico-usuarios-db
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Password@123
+    volumes:
+      - mssqldata:/var/opt/mssql
+    networks:
+      - app-network
+
+volumes:
+  mssqldata:
+
+networks:
+  app-network:
+    driver: bridge
