@@ -6,6 +6,7 @@ COPY src/MicroservicoUsuarios.API/*.csproj src/MicroservicoUsuarios.API/
 COPY src/MicroservicoUsuarios.Application/*.csproj src/MicroservicoUsuarios.Application/
 COPY src/MicroservicoUsuarios.Core/*.csproj src/MicroservicoUsuarios.Core/
 COPY src/MicroservicoUsuarios.Infrastructure/*.csproj src/MicroservicoUsuarios.Infrastructure/
+COPY tests/MicroservicoUsuarios.Tests.Unit/*.csproj tests/MicroservicoUsuarios.Tests.Unit/
 
 RUN dotnet restore
 
