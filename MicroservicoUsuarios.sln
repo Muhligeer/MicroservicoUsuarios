@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroservicoUsuarios.Infras
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroservicoUsuarios.API", "src\MicroservicoUsuarios.API\MicroservicoUsuarios.API.csproj", "{2D60008A-E2C8-42B5-A09F-704D646FB567}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroservicoUsuarios.Tests.Unit", "tests\MicroservicoUsuarios.Tests.Unit\MicroservicoUsuarios.Tests.Unit.csproj", "{C3F5E5FA-2D38-93AF-9987-8BBB1CC942AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,8 +71,23 @@ Global
 		{2D60008A-E2C8-42B5-A09F-704D646FB567}.Release|x64.Build.0 = Release|Any CPU
 		{2D60008A-E2C8-42B5-A09F-704D646FB567}.Release|x86.ActiveCfg = Release|Any CPU
 		{2D60008A-E2C8-42B5-A09F-704D646FB567}.Release|x86.Build.0 = Release|Any CPU
+		{C3F5E5FA-2D38-93AF-9987-8BBB1CC942AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3F5E5FA-2D38-93AF-9987-8BBB1CC942AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3F5E5FA-2D38-93AF-9987-8BBB1CC942AF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C3F5E5FA-2D38-93AF-9987-8BBB1CC942AF}.Debug|x64.Build.0 = Debug|Any CPU
+		{C3F5E5FA-2D38-93AF-9987-8BBB1CC942AF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C3F5E5FA-2D38-93AF-9987-8BBB1CC942AF}.Debug|x86.Build.0 = Debug|Any CPU
+		{C3F5E5FA-2D38-93AF-9987-8BBB1CC942AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3F5E5FA-2D38-93AF-9987-8BBB1CC942AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3F5E5FA-2D38-93AF-9987-8BBB1CC942AF}.Release|x64.ActiveCfg = Release|Any CPU
+		{C3F5E5FA-2D38-93AF-9987-8BBB1CC942AF}.Release|x64.Build.0 = Release|Any CPU
+		{C3F5E5FA-2D38-93AF-9987-8BBB1CC942AF}.Release|x86.ActiveCfg = Release|Any CPU
+		{C3F5E5FA-2D38-93AF-9987-8BBB1CC942AF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BBE19C8B-FDDB-411B-965B-D65C2C408268}
 	EndGlobalSection
 EndGlobal
